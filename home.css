@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b4a6f;
+  padding: 15px 40px;
+  color: white;
+}
+.nav-links {
+  list-style: none;      /* يشيل النقط */
+  display: flex;         /* يخليهم جنب بعض */
+  gap: 40px;             /* مسافة بينهم */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* شكل اللينكات */
+.nav-links a {
+  color: white;              /* يخلي اللون أبيض */
+  text-decoration: none;     /* يشيل الخط اللي تحت */
+  font-size: 18px;           /* يكبر الخط شوية */
+  font-weight: 500;          /* يخليه أوضح */
+  font-family: 'Poppins', sans-serif; /* خط حلو */
+  transition: 0.3s;
+  
+}
+
+/* شكل اللينك لما الماوس يعدي عليه */
+.nav-links a:hover {
+  color: #f4b860;            /* لون أصفر جميل */
+}
+
+
+
+.login-btn {
+  background: #f4b860;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;   /* يشيل الخط تحت */
+  font-weight: bold;
+  display: inline-block;
+}
+
+
+/* Hero */
+.hero {
+ 
+  height: 90vh;
+background: url("images/hero.jpg") center/cover no-repeat;
+
+
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.hero input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.view-btn {
+  background: #1f6fa5;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* الخلفية الغامقة */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* الكارت الأبيض */
+.popup-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.popup-box button {
+  margin: 10px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup-box button:first-child {
+  background: #0b4a6f;
+  color: white;
+}
+
+.popup-box button:last-child {
+  background: #ccc;
+}
+.featured {
+  padding: 60px 40px;
+  text-align: center;
+  background: #f7f7f7;
+}
+
+.featured h2 {
+  margin-bottom: 30px;
+  color: #0b4a6f;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 22px;
+  background: #0b4a6f;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+}
+/* .card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+} */
+.footer {
+  background: #0b4a6f;
+  color: white;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding: 50px 60px;
+}
+
+.footer-brand h2 {
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  color: #d0e3ef;
+  line-height: 1.6;
+}
+
+.footer-links h4 {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  display: block;
+  color: #d0e3ef;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #083652;
+  font-size: 14px;
+}
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #d0e3ef;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: white;
+  transform: translateY(-2px);
+}

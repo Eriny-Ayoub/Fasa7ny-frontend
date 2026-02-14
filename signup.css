@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* خلفية الصفحة */
+body {
+  height: 100vh;
+  background: url("./images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* طبقة غامقة خفيفة فوق الصورة */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* الكارت الأبيض */
+.form-box {
+  position: relative;
+  z-index: 1;
+
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px 30px;
+  border-radius: 18px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+  /* دعم سفاري */
+  -webkit-backdrop-filter: blur(6px);
+
+  /* الخاصية الأصلية */
+  backdrop-filter: blur(6px);
+}
+
+
+/* العنوان */
+.form-box h2 {
+  margin-bottom: 18px;
+  color: #0b4a6f;
+}
+
+/* الحقول */
+.form-box input {
+  width: 100%;
+  padding: 11px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-box input:focus {
+  border-color: #0b4a6f;
+  box-shadow: 0 0 0 2px rgba(11, 74, 111, 0.15);
+}
+
+/* زرار أساسي */
+.main-btn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+  background: #0b4a6f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background: #083652;
+  transform: translateY(-1px);
+}
+
+/* نص التحويل */
+.form-box p {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.form-box a {
+  color: #0b4a6f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form-box a:hover {
+  text-decoration: underline;
+}
+
+/* لينك الرجوع */
+.back-home {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.popup-box p {
+  margin-bottom: 12px;
+}
+
+.popup-box button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #0b4a6f;
+  color: white;
+  cursor: pointer;
+}

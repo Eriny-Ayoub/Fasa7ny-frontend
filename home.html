@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fasa7ny</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="home.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2 class="logo">Fasa7ny</h2>
+
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="#" class="login-btn" id="loginBtn">Sign In</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Egypt Through Images</h1>
+      <p>Explore the beauty of historical places across Egypt.</p>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for places, temples, or landmarks..."
+      />
+
+      <button class="view-btn" onclick="showResults()">
+        View Results
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Locations -->
+  <section class="featured">
+    <h2>Featured Locations</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/pyramids.jpg" alt="Pyramids">
+        <h3>Pyramids of Giza</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/luxor.jpg" alt="Luxor">
+        <h3>Luxor Temple</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/abusimbel.jpg" alt="Abu Simbel">
+        <h3>Abu Simbel</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/siwa.jpg" alt="Siwa">
+        <h3>Siwa Oasis</h3>
+      </div>
+
+    </div>
+
+    <a href="locations.html" class="view-all">View All Locations</a>
+  </section>
+
+  <!-- Logout Popup -->
+  <div id="logoutPopup" class="popup">
+    <div class="popup-box">
+      <p>Do you want to logout?</p>
+      <button onclick="logout()">Logout</button>
+      <button onclick="closePopup()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <h2>Fasa7ny</h2>
+        <p>
+          Discover the beauty of Egypt’s historical places and
+          explore amazing destinations through images.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Site Map -->
+      <div class="footer-links">
+        <h4>Site Map</h4>
+        <a href="home.html">Home</a>
+        <a href="locations.html">Locations</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Fasa7ny. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const username = localStorage.getItem("username");
+    const loginBtn = document.getElementById("loginBtn");
+    const popup = document.getElementById("logoutPopup");
+
+    if (username) {
+      loginBtn.textContent = username;
+
+      loginBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.style.display = "flex";
+      });
+    } else {
+      loginBtn.href = "auth.html";
+    }
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+
+    function logout() {
+      localStorage.removeItem("username");
+      window.location.reload();
+    }
+  </script>
+
+</body>
+</html>

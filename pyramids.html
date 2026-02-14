@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyramids of Giza</title>
+  <link rel="stylesheet" href="details.css">
+</head>
+
+<body>
+
+  <!-- صورة الأهرامات -->
+  <img src="images/pyramids.jpg" class="hero-img" alt="Pyramids">
+
+  <!-- العنوان والوصف -->
+  <h1>Pyramids of Giza</h1>
+  <p>
+    The Pyramids of Giza are one of the most famous historical
+    sites in the world and a symbol of ancient Egyptian civilization.
+  </p>
+
+  <!-- الخريطة -->
+  <iframe
+    src="https://www.google.com/maps?q=Giza%20Pyramids&output=embed">
+  </iframe>
+
+  <!-- الريفيوهات -->
+  <h2>Visitor Reviews</h2>
+  <div class="reviews" id="reviews">
+
+    <div class="review-card">
+      <img src="images/user1.jpg" class="user-img">
+      <h4>Ahmed Hassan</h4>
+      <p>Amazing place! One of the best historical experiences in Egypt.</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="review-card">
+      <img src="images/user2.jpg" class="user-img">
+      <h4>Sara Mohamed</h4>
+      <p>The sunset near the pyramids is unforgettable. Must visit!</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+  </div>
+ <!-- التقييم بالنجوم -->
+  <h2>Rating</h2>
+  <div class="stars" id="stars">
+    <span onclick="rate(1)">☆</span>
+    <span onclick="rate(2)">☆</span>
+    <span onclick="rate(3)">☆</span>
+    <span onclick="rate(4)">☆</span>
+    <span onclick="rate(5)">☆</span>
+  </div>
+  <!-- إضافة ريفيو جديد -->
+  <input type="text" id="reviewInput" placeholder="Write your review">
+  <button onclick="addReview()">Add Review</button>
+
+  <!-- جافاسكريبت -->
+  <script>
+    function addReview() {
+      const input = document.getElementById("reviewInput");
+      const reviews = document.getElementById("reviews");
+
+      if (input.value.trim() === "") return;
+
+      const card = document.createElement("div");
+      card.className = "review-card";
+
+      card.innerHTML = `
+        <img src="images/user1.jpg" class="user-img">
+        <h4>You</h4>
+        <p>${input.value}</p>
+        <div class="stars">★★★★★</div>
+      `;
+
+      reviews.appendChild(card);
+      input.value = "";
+    }
+
+    function rate(num) {
+      const stars = document.querySelectorAll("#stars span");
+      stars.forEach((s, i) => {
+        s.textContent = i < num ? "★" : "☆";
+      });
+    }
+  </script>
+
+</body>
+</html>

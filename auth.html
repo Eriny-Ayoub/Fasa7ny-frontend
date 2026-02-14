@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth - Fasa7ny</title>
+
+  <link rel="stylesheet" href="auth.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="auth-container">
+    <div class="form-box">
+
+      <h2>Login</h2>
+
+      <input type="email" id="emailField" placeholder="Email" />
+      <input type="password" id="passField" placeholder="Password" />
+
+      <button class="main-btn">Login</button>
+
+      <p>
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+      </p>
+
+      <a href="home.html" class="back-home">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-box">
+      <p id="popupMessage"></p>
+      <button onclick="closeLoginPopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const btn = document.querySelector(".main-btn");
+    const popup = document.getElementById("loginPopup");
+    const message = document.getElementById("popupMessage");
+
+    const emailField = document.getElementById("emailField");
+    const passField = document.getElementById("passField");
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const email = emailField.value.trim();
+      const pass = passField.value.trim();
+
+      if (!email || !pass) {
+        message.textContent = "Please fill all fields";
+        popup.style.display = "flex";
+        return;
+      }
+
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPass = localStorage.getItem("userPass");
+      const savedName = localStorage.getItem("userName");
+
+      if (email === savedEmail && pass === savedPass) {
+        localStorage.setItem("username", savedName);
+
+        message.textContent = "Login successful!";
+        popup.style.display = "flex";
+
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1200);
+      } else {
+        message.textContent = "Wrong email or password";
+        popup.style.display = "flex";
+      }
+    });
+
+    function closeLoginPopup() {
+      popup.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

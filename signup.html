@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Fasa7ny</title>
+
+  <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="auth-container">
+    <div class="form-box">
+
+      <h2>Create Account</h2>
+
+      <input type="text" id="name" placeholder="Full Name" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="pass" placeholder="Password" />
+
+      <button class="main-btn" onclick="signup()">Sign Up</button>
+
+      <p>
+        Already have an account?
+        <a href="auth.html">Login</a>
+      </p>
+
+      <a href="home.html" class="back-home">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <p id="msg"></p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function signup() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pass = document.getElementById("pass").value.trim();
+
+      const popup = document.getElementById("popup");
+      const msg = document.getElementById("msg");
+
+      if (!name || !email || !pass) {
+        msg.textContent = "Please fill all fields";
+        popup.style.display = "flex";
+        return;
+      }
+
+      localStorage.setItem("userName", name);
+localStorage.setItem("userEmail", email);
+localStorage.setItem("userPass", pass);
+
+/* مهم للـ navbar */
+localStorage.setItem("username", name);
+
+window.location.href = "home.html";
+
+
+      msg.textContent = "Account created successfully!";
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1200);
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
