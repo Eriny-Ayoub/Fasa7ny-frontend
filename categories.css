@@ -97,3 +97,12 @@ body {
 .nav-links a:hover {
   color: #f4b860;            /* لون أصفر جميل */
 }
+.login-btn {
+  background: #f4b860;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;   /* يشيل الخط تحت */
+  font-weight: bold;
+  display: inline-block;
+}

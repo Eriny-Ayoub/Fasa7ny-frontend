@@ -20,12 +20,12 @@
     <h2 class="logo">Fasa7ny</h2>
 
     <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="categories.html">Categories</a></li>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="categories.html">Categories</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="profile.html">Profile</a></li>
+</ul>
 
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
 
     <a href="#" class="login-btn" id="loginBtn">Sign In</a>
   </nav>
@@ -130,6 +130,30 @@
       © 2026 Fasa7ny. All rights reserved.
     </div>
   </footer>
+  <!-- Chatbot Button -->
+<div class="chatbot-btn" onclick="toggleChat()">
+  🤖
+</div>
+
+<!-- Chat Window -->
+<div class="chatbot-box" id="chatbox">
+
+  <div class="chat-header">
+    Fasa7ny Bot
+    <span onclick="toggleChat()">✖</span>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <p class="bot">Hi 👋 How can I help you?</p>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
 
   <!-- Script -->
   <script>
@@ -138,7 +162,10 @@
     const popup = document.getElementById("logoutPopup");
 
     if (username) {
+      // loginBtn.textContent = username;
       loginBtn.textContent = username;
+loginBtn.href = "profile.html";
+
 
       loginBtn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -157,6 +184,7 @@
       window.location.reload();
     }
   </script>
+  
 
 </body>
 </html>
